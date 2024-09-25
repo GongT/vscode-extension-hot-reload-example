@@ -14,7 +14,9 @@
 		"vscode": "^1.93.0"
 	},
 	"categories": [],
-	"activationEvents": ["*"],
+	"activationEvents": [
+		"*"
+	],
 	"l10n": "./l10n",
 	"main": "./dist/loader.js",
 	"$comment": "change above line to dist/main.js, hot-reload will disable",
@@ -28,7 +30,26 @@
 				"command": "my-command-id",
 				"title": "Test Command"
 			}
-		]
+		],
+		"viewsContainers": {
+			"panel": [
+				{
+					"id": "test-container",
+					"title": "Test Container",
+					"icon": "$(symbol-constant)"
+				}
+			]
+		},
+		"views": {
+			"test-container": [
+				{
+					"id": "test-container.test-webview",
+					"icon": "$(symbol-constant)",
+					"name": "Test Web View",
+					"type": "webview"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"watch": "npm-run-all -p watch:*",

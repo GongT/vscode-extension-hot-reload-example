@@ -80,12 +80,19 @@ export function activate(context: ExtensionContext) {
 			doActivate(context, channel);
 		}),
 	);
-	const bar = window.createStatusBarItem('test-command-hot-reload', StatusBarAlignment.Right, 100000);
-	context.subscriptions.push(bar);
-	bar.text = '$(sync) SoftReload';
-	bar.backgroundColor = new ThemeColor('statusBarItem.prominentBackground');
-	bar.command = 'test-command-hot-reload';
-	bar.show();
+	const bar1 = window.createStatusBarItem('test-command-hot-reload', StatusBarAlignment.Right, 100000);
+	context.subscriptions.push(bar1);
+	bar1.text = '$(debug-rerun) Reload';
+	bar1.backgroundColor = new ThemeColor('statusBarItem.prominentBackground');
+	bar1.command = 'test-command-hot-reload';
+	bar1.show();
+
+	const bar2 = window.createStatusBarItem('test-command-deactive', StatusBarAlignment.Right, 100000);
+	context.subscriptions.push(bar2);
+	bar2.text = '$(coffee) Down';
+	bar2.backgroundColor = new ThemeColor('statusBarItem.prominentBackground');
+	bar2.command = 'test-command-deactive';
+	bar2.show();
 }
 export function deactivate() {
 	doDeactive();

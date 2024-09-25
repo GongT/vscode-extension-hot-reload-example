@@ -1,5 +1,6 @@
 import { spawn } from 'child_process';
-import { ExtensionContext, OutputChannel, window } from 'vscode';
+import { ExtensionContext, OutputChannel } from 'vscode';
+import { TestViewProvider } from './extension/test-view';
 
 console.log('plugin load: ', require('@@buildtime')); // this is an example esbuild plugin
 
@@ -26,7 +27,8 @@ export async function activate(_context: ExtensionContext, _channel: OutputChann
 		},
 	});
 
-	window.showInformationMessage('wow, such doge!!!!');
+	const provider = new TestViewProvider();
+	provider.registerProvider();
 }
 
 export function deactivate() {}
