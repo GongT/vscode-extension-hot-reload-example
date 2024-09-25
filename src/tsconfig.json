@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"resolvePackageJsonExports": true,
+		"resolvePackageJsonImports": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"alwaysStrict": true,
+		"strict": true,
+		"outDir": "../dist/tsc-out",
+		"lib": [
+			"ES2022"
+		],
+		"rootDir": ".",
+		"typeRoots": ["../node_modules/@types", "../node_modules"],
+		"types": [
+			"node"
+		]
+	}
+}

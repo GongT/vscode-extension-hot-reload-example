@@ -1,0 +1,46 @@
+{
+	"name": "hot-reloading",
+	"private": true,
+	"author": {
+		"email": "admin@gongt.me",
+		"name": "GongT",
+		"url": "https://www.gongt.me"
+	},
+	"publisher": "gongt",
+	"displayName": "Sample Extension",
+	"description": "Extension development hot reloading",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.93.0"
+	},
+	"categories": [],
+	"activationEvents": ["*"],
+	"l10n": "./l10n",
+	"main": "./dist/loader.js",
+	"$comment": "change above line to dist/main.js, hot-reload will disable",
+	"extensionKind": [
+		"workspace",
+		"ui"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "my-command-id",
+				"title": "Test Command"
+			}
+		]
+	},
+	"scripts": {
+		"watch": "npm-run-all -p watch:*",
+		"watch:tsc": "tsc --noEmit --watch --project src",
+		"watch:esbuild": "node esbuild.js --watch"
+	},
+	"devDependencies": {
+		"@types/node": "~20.16.5",
+		"@types/vscode": "^1.93.0",
+		"esbuild": "^0.23.1",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^5.6.2"
+	},
+	"dependencies": {}
+}
